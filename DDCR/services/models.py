@@ -19,11 +19,11 @@ class Plan(models.Model):
         ('discount', 'Discount'),
     )
 
-    plan_tupe = models.CharField(choices=PLAN_TYPES, max_length=10)
+    plan_type = models.CharField(choices=PLAN_TYPES, max_length=10)
     discount_percent = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100)])
     
     def __str__(self):
-        return f'{self.plan_tupe}'
+        return f'{self.plan_type}'
 
 
 class Subscription(models.Model):
